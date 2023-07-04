@@ -290,11 +290,13 @@ html, body {
     z-index: -1;
     transform: translateX(-50%);
 }
-.hero-dashboard {
-    flex-direction: column;
-    gap: 1.25rem;
-    height: auto;
-    margin-bottom: 0.3125rem;
+@media (max-width: 768px) {
+    .hero-dashboard {
+        flex-direction: column;
+        gap: 1.25rem;
+        height: auto;
+        margin-bottom: 0.3125rem;
+    }
 }
 
 .hero-dashboard__primary {
