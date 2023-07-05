@@ -564,6 +564,7 @@ html, body {
     padding-bottom: .625rem;
     overflow-x: auto;
     scrollbar-width: none;
+    content-visibility: auto;
 }
 
 .section__panel::-webkit-scrollbar {
@@ -580,6 +581,8 @@ html, body {
     margin: 0;
     padding: 0;
     list-style: none;
+    /* content-visibility: auto;
+    contain-intrinsic-size: calc(100vw + 100px) 120px; */
 }
 
 .section__panel-wrapper {
