@@ -1,4 +1,4 @@
-/* @import url("vendors/bootstrap.css"); */
+@import url("vendors/bootstrap.css");
 
 html {
     font-size: 100%;
@@ -54,11 +54,10 @@ html, body {
     width: 6.75rem;
     height: 2.3125rem;
     margin-right: 3.25rem;
+    background: no-repeat 50% 50% url(assets/logo.svg);
+    background-size: contain;
 }
-.header__logo :is(svg) {
-    width: 100%;
-    height: 100%;
-}
+
 .header__menu {
     display: none;
     width: 3.5rem;
@@ -276,22 +275,12 @@ html, body {
     display: flex;
     gap: 0.9375rem;
     height: 20.6875rem;
-    background: no-repeat 50% 50% url(assets/bg.png);
+    background: no-repeat 50% 50% url(assets/bg@2x.png);
     /*background-size: cover;*/
     background-size: 1260px;
     border-radius: 1.25rem;
 }
 
-/* .hero-dashboard :is(img) {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 1260px;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-    transform: translateX(-50%);
-} */
 @media (max-width: 768px) {
     .hero-dashboard {
         flex-direction: column;
@@ -386,19 +375,12 @@ html, body {
 }
 
 .hero-dashboard__icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width: 1.625rem;
     height: 1.625rem;
     margin-left: 0.3125rem;
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: contain;
-}
-.hero-dashboard__icon :is(svg) {
-    width: 100%;
-    height: 100%;
 }
 
 @media (max-width: 768px) {
@@ -408,9 +390,9 @@ html, body {
     }
 }
 
-/* .hero-dashboard__icon_rain {
+.hero-dashboard__icon_rain {
     background-image: url(assets/cloud-drizzle.svg);
-} */
+}
 
 .hero-dashboard__schedule {
     display: flex;
@@ -471,10 +453,29 @@ html, body {
     left: 0.875rem;
     width: 1.5rem;
     height: 1.5rem;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: contain;
 }
-.event__icon :is(svg) {
-    width: 100%;
-    height: 100%;
+
+.event__icon_temp {
+    background-image: url(assets/icon_temperature.svg);
+}
+
+.event__icon_temp2 {
+    background-image: url(assets/icon_temperature_2.svg);
+}
+
+.event__icon_light {
+    background-image: url(assets/icon_sun.svg);
+}
+
+.event__icon_light2 {
+    background-image: url(assets/icon_sun_2.svg);
+}
+
+.event__icon_schedule {
+    background-image: url(assets/icon_scheduled.svg);
 }
 
 .event__title {
