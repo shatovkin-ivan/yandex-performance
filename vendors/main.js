@@ -11,11 +11,7 @@ function Header() {
     };
 
     return <header className="header">
-        <a href="/" className="header__logo" aria-label="Яндекс.Дом">
-            {/* <svg>
-                <use xlinkHref="./assets/sprites.svg#logo"></use>
-            </svg>     */}
-        </a>
+        <a href="/" className="header__logo" aria-label="Яндекс.Дом"></a>
         <button className="header__menu" aria-expanded={expanded ? 'true' : 'false'} onClick={onClick}>
             <span className="header__menu-text a11y-hidden">
                 {expanded ? 'Закрыть меню' : 'Открыть меню'}
@@ -50,11 +46,7 @@ function Event(props) {
 
     return <li ref={ref} className={'event' + (props.slim ? ' event_slim' : '')}>
         <button className="event__button">
-            <span className={`event__icon event__icon_${props.icon}`} role="img" aria-label={props.iconLabel}>
-                {/* <svg>
-                    <use xlinkHref={`./assets/sprites.svg#${props.icon}`}></use>
-                </svg>  */}
-            </span>
+            <span className={`event__icon event__icon_${props.icon}`} role="img" aria-label={props.iconLabel}></span>
             <h4 className="event__title">{props.title}</h4>
             {props.subtitle &&
                 <span className="event__subtitle">{props.subtitle}</span>
@@ -221,15 +213,6 @@ function Main() {
         <section className="section main__general">
             <h2 className="section__title section__title-header section__main-title">Главное</h2>
             <div className="hero-dashboard">
-                {/* <picture>
-                    <source srcSet="./assets/bg-mobile.avif" media="(max-width: 768px)" type="image/avif" />
-                    <source srcSet="./assets/bg-mobile.webp" media="(max-width: 768px)" type="image/webp" /> 
-                    <source srcSet="./assets/bg-mobile.png" media="(max-width: 768px)" type="image/png" /> 
-                    <source srcSet="./assets/bg.avif" type="image/avif" />
-                    <source srcSet="./assets/bg.webp" type="image/webp" /> 
-                    <source srcSet="./assets/bg.png" type="image/png" /> 
-                    <img src="./assets/bg.png" alt="Фоновое изображение" />
-                </picture> */}
                 <div className="hero-dashboard__primary">
                     <h3 className="hero-dashboard__title">Привет, Геннадий!</h3>
                     <p className="hero-dashboard__subtitle">Двери и окна закрыты, сигнализация включена.</p>
@@ -248,14 +231,10 @@ function Main() {
                                 <span className="a11y-hidden">°</span>
 
                                 <div
-                                    className="hero-dashboard__icon"
+                                    className="hero-dashboard__icon hero-dashboard__icon_rain"
                                     role="img"
                                     aria-label="Дождь"
-                                >
-                                    {/* <svg>
-                                        <use xlinkHref="./assets/sprites.svg#cloud-drizzle"></use>
-                                    </svg>   */}
-                                </div>
+                                ></div>
                             </div>
                         </li>
                     </ul>
