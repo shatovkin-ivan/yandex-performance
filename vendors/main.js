@@ -171,7 +171,6 @@ function Main() {
     const ref = React.useRef();
     const initedRef = React.useRef(false);
     const [activeTab, setActiveTab] = React.useState('');
-    const [limit, setLimit] = React.useState(8);
     const [hasRightScroll, setHasRightScroll] = React.useState(false);
 
     React.useEffect(() => {
@@ -201,8 +200,6 @@ function Main() {
     });
 
     const onArrowCLick = () => {
-        const newLimit = limit + 1
-        setLimit(newLimit)
         const scroller = ref.current.querySelector('.section__panel:not(.section__panel_hidden)');
         if (scroller) {
             scroller.scrollTo({
@@ -340,7 +337,7 @@ function Main() {
                     key === activeTab && <div key={key} role="tabpanel" className={'section__panel' + (key === activeTab ? '' : ' section__panel_hidden')} aria-hidden={key === activeTab ? 'false' : 'true'} id={`panel_${key}`} aria-labelledby={`tab_${key}`}>
                         <ul className="section__panel-list">
                             {TABS[key].items.map((item, index) =>
-                                index <= limit && <Event
+                               <Event
                                     key={index}
                                     {...item}
                                     onSize={onSize}
@@ -350,7 +347,7 @@ function Main() {
                     </div>
                 )}
                 {hasRightScroll &&
-                    <div className="section__arrow" onClick={onArrowCLick}></div>
+                    <div className="section__arrow" onClick={onArrowCLick()}></div>
                 }
             </div>
         </section>
