@@ -347,7 +347,7 @@ function Main() {
                     </div>
                 )}
                 {hasRightScroll &&
-                    <div className="section__arrow" onClick={onArrowCLick()}></div>
+                    <div className="section__arrow" onClick={onArrowCLick}></div>
                 }
             </div>
         </section>
