@@ -221,15 +221,15 @@ function Main() {
         <section className="section main__general">
             <h2 className="section__title section__title-header section__main-title">Главное</h2>
             <div className="hero-dashboard">
-                <picture>
-                    {/* <source srcSet="./assets/bg-mobile.avif" media="(max-width: 768px)" type="image/avif" />
-                    <source srcSet="./assets/bg-mobile.webp" media="(max-width: 768px)" type="image/webp" />  */}
+                {/* <picture>
+                    <source srcSet="./assets/bg-mobile.avif" media="(max-width: 768px)" type="image/avif" />
+                    <source srcSet="./assets/bg-mobile.webp" media="(max-width: 768px)" type="image/webp" /> 
                     <source srcSet="./assets/bg-mobile.png" media="(max-width: 768px)" type="image/png" /> 
-                    {/* <source srcSet="./assets/bg.avif" type="image/avif" />
-                    <source srcSet="./assets/bg.webp" type="image/webp" />  */}
+                    <source srcSet="./assets/bg.avif" type="image/avif" />
+                    <source srcSet="./assets/bg.webp" type="image/webp" /> 
                     <source srcSet="./assets/bg.png" type="image/png" /> 
                     <img src="./assets/bg.png" alt="Фоновое изображение" />
-                </picture>
+                </picture> */}
                 <div className="hero-dashboard__primary">
                     <h3 className="hero-dashboard__title">Привет, Геннадий!</h3>
                     <p className="hero-dashboard__subtitle">Двери и окна закрыты, сигнализация включена.</p>

@@ -276,11 +276,13 @@ html, body {
     display: flex;
     gap: 0.9375rem;
     height: 20.6875rem;
+    background: no-repeat 50% 50% url(assets/bg.png);
+    /*background-size: cover;*/
+    background-size: 1260px;
     border-radius: 1.25rem;
-    overflow: hidden;
 }
 
-.hero-dashboard :is(img) {
+/* .hero-dashboard :is(img) {
     position: absolute;
     top: 0;
     left: 50%;
@@ -289,26 +291,24 @@ html, body {
     object-fit: cover;
     z-index: -1;
     transform: translateX(-50%);
-}
+} */
 @media (max-width: 768px) {
     .hero-dashboard {
         flex-direction: column;
         gap: 1.25rem;
         height: auto;
         margin-bottom: 0.3125rem;
+        background-image: url(assets/bg-mobile.png);
     }
 }
 
 .hero-dashboard__primary {
     flex: 1 1 auto;
-    margin-left: -0.9375rem;
     padding: 1.25rem 0 1.25rem 1.25rem;
 }
 
 @media (max-width: 768px) {
     .hero-dashboard__primary {
-        margin-left: 0;
-        margin-top: -1.25rem;
         padding: 1.25rem 1.25rem 0 1.25rem;
     }
 }
