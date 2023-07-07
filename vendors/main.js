@@ -11,7 +11,11 @@ function Header() {
     };
 
     return <header className="header">
-        <a href="/" className="header__logo" aria-label="Яндекс.Дом"></a>
+        <a href="/" className="header__logo" aria-label="Яндекс.Дом">
+            <svg>
+                <use xlinkHref={`./assets/sprites.svg#logo`}></use>
+            </svg>
+        </a>
         <button className="header__menu" aria-expanded={expanded ? 'true' : 'false'} onClick={onClick}>
             <span className="header__menu-text a11y-hidden">
                 {expanded ? 'Закрыть меню' : 'Открыть меню'}
@@ -46,7 +50,11 @@ function Event(props) {
 
     return <li ref={ref} className={'event' + (props.slim ? ' event_slim' : '')}>
         <button className="event__button">
-            <span className={`event__icon event__icon_${props.icon}`} role="img" aria-label={props.iconLabel}></span>
+            <span className={`event__icon`} role="img" aria-label={props.iconLabel}>
+                <svg>
+                    <use xlinkHref={`./assets/sprites.svg#${props.icon}`}></use>
+                </svg>
+            </span>
             <h4 className="event__title">{props.title}</h4>
             {props.subtitle &&
                 <span className="event__subtitle">{props.subtitle}</span>
@@ -59,42 +67,42 @@ const TABS = {
     all: {
         title: 'Все',
         items: [{
-            icon: 'light2',
+            icon: 'icon_sun_2',
             iconLabel: 'Освещение',
             title: 'Xiaomi Yeelight LED Smart Bulb',
             subtitle: 'Включено'
         }, {
-            icon: 'light',
+            icon: 'icon_sun',
             iconLabel: 'Освещение',
             title: 'D-Link Omna 180 Cam',
             subtitle: 'Включится в 17:00'
         }, {
-            icon: 'temp',
+            icon: 'icon_temperature1',
             iconLabel: 'Температура',
             title: 'Elgato Eve Degree Connected',
             subtitle: 'Выключено до 17:00'
         }, {
-            icon: 'light',
+            icon: 'icon_sun',
             iconLabel: 'Освещение',
             title: 'LIFX Mini Day & Dusk A60 E27',
             subtitle: 'Включится в 17:00'
         }, {
-            icon: 'light2',
+            icon: 'icon_sun_2',
             iconLabel: 'Освещение',
             title: 'Xiaomi Mi Air Purifier 2S',
             subtitle: 'Включено'
         }, {
-            icon: 'light',
+            icon: 'icon_sun',
             iconLabel: 'Освещение',
             title: 'Philips Zhirui',
             subtitle: 'Включено'
         }, {
-            icon: 'light',
+            icon: 'icon_sun',
             iconLabel: 'Освещение',
             title: 'Philips Zhirui',
             subtitle: 'Включено'
         }, {
-            icon: 'light2',
+            icon: 'icon_sun_2',
             iconLabel: 'Освещение',
             title: 'Xiaomi Mi Air Purifier 2S',
             subtitle: 'Включено'
@@ -103,12 +111,12 @@ const TABS = {
     kitchen: {
         title: 'Кухня',
         items: [{
-            icon: 'light2',
+            icon: 'icon_sun_2',
             iconLabel: 'Освещение',
             title: 'Xiaomi Yeelight LED Smart Bulb',
             subtitle: 'Включено'
         }, {
-            icon: 'temp',
+            icon: 'icon_temperature1',
             iconLabel: 'Температура',
             title: 'Elgato Eve Degree Connected',
             subtitle: 'Выключено до 17:00'
@@ -117,12 +125,12 @@ const TABS = {
     hall: {
         title: 'Зал',
         items: [{
-            icon: 'light',
+            icon: 'icon_sun',
             iconLabel: 'Освещение',
             title: 'Philips Zhirui',
             subtitle: 'Выключено'
         }, {
-            icon: 'light2',
+            icon: 'icon_sun_2',
             iconLabel: 'Освещение',
             title: 'Xiaomi Mi Air Purifier 2S',
             subtitle: 'Выключено'
@@ -131,22 +139,22 @@ const TABS = {
     lights: {
         title: 'Лампочки',
         items: [{
-            icon: 'light',
+            icon: 'icon_sun',
             iconLabel: 'Освещение',
             title: 'D-Link Omna 180 Cam',
             subtitle: 'Включится в 17:00'
         }, {
-            icon: 'light',
+            icon: 'icon_sun',
             iconLabel: 'Освещение',
             title: 'LIFX Mini Day & Dusk A60 E27',
             subtitle: 'Включится в 17:00'
         }, {
-            icon: 'light2',
+            icon: 'icon_sun_2',
             iconLabel: 'Освещение',
             title: 'Xiaomi Mi Air Purifier 2S',
             subtitle: 'Включено'
         }, {
-            icon: 'light',
+            icon: 'icon_sun',
             iconLabel: 'Освещение',
             title: 'Philips Zhirui',
             subtitle: 'Включено'
@@ -155,7 +163,7 @@ const TABS = {
     cameras: {
         title: 'Камеры',
         items: [{
-            icon: 'light2',
+            icon: 'icon_sun_2',
             iconLabel: 'Освещение',
             title: 'Xiaomi Mi Air Purifier 2S',
             subtitle: 'Включено'
@@ -234,26 +242,30 @@ function Main() {
                                     className="hero-dashboard__icon hero-dashboard__icon_rain"
                                     role="img"
                                     aria-label="Дождь"
-                                ></div>
+                                >
+                                    <svg>
+                                        <use xlinkHref={`./assets/sprites.svg#cloud-drizzle`}></use>
+                                    </svg>
+                                </div>
                             </div>
                         </li>
                     </ul>
                 </div>
                 <ul className="hero-dashboard__schedule">
                     <Event
-                        icon="temp"
+                        icon="icon_temperature1"
                         iconLabel="Температура"
                         title="Philips Cooler"
                         subtitle="Начнет охлаждать в 16:30"
                     />
                     <Event
-                        icon="light"
+                        icon="icon_sun"
                         iconLabel="Освещение"
                         title="Xiaomi Yeelight LED Smart Bulb"
                         subtitle="Включится в 17:00"
                     />
                     <Event
-                        icon="light"
+                        icon="icon_sun"
                         iconLabel="Освещение"
                         title="Xiaomi Yeelight LED Smart Bulb"
                         subtitle="Включится в 17:00"
@@ -268,32 +280,32 @@ function Main() {
             <ul className="event-grid">
                 <Event
                     slim={true}
-                    icon="light2"
+                    icon="icon_sun_2"
                     iconLabel="Освещение"
                     title="Выключить весь свет в доме и во дворе"
                 />
                 <Event
                     slim={true}
-                    icon="schedule"
+                    icon="icon_scheduled"
                     iconLabel="Расписание"
                     title="Я ухожу"
                 />
                 <Event
                     slim={true}
-                    icon="light2"
+                    icon="icon_sun_2"
                     iconLabel="Освещение"
                     title="Включить свет в коридоре"
                 />
                 <Event
                     slim={true}
-                    icon="temp2"
+                    icon="icon_temperature2"
                     iconLabel="Температура"
                     title="Набрать горячую ванну"
                     subtitle="Начнётся в 18:00"
                 />
                 <Event
                     slim={true}
-                    icon="temp2"
+                    icon="icon_temperature2"
                     iconLabel="Температура"
                     title="Сделать пол тёплым во всей квартире"
                 />
